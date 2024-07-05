@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.7.1.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script lang="java">
+        $(function(){
+            // $(function(){
+            //     $('.box li'),click(function(){
+            //         $('.box li').removeClass('ani')
+            //         $(this).addClass('ani')
+            //     })
+            // })
+            $('.box li').click(function(){
+                $(this).animate({'top' : '500px' }, 500).animate({'top' : '0px'} , 700)
+            })
+        })//jquery cls
+    </script>
+
+    <style type="text/css">
+        *{margin: 0;padding: 0;}
+        a{text-decoration: none; color: inherit;}
+        ul, li{list-style: none;}
+
+        .box{
+            width: 800px;
+            /* border: 1px solid red; */
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .box li{
+            width: 100px;
+            height: 100px; 
+            position: relative; 
+            left: 0;          
+        }
+
+        .box li a{
+            display: block;
+            height: 100%;
+            text-align: center;
+            line-height: 100px;
+            font-size: 30px;
+            font-weight:bold;
+        }
+
+        .b1{ background-color: red;}
+        .b2{ background-color: orange;}
+        .b3{ background-color: yellow;}
+        .b4{ background-color: green;}
+        .b5{ background-color:blue}
+        .b6{ background-color: indigo;}
+        .b7{ background-color:violet;}
+
+        .box li .ani{animation: move 1.5s ease;}
+        @keyframes move{0%{top: 0;} 50%{top: 500px;} 100%{top: 0;}}
+    </style>
+</head>
+<body>
+
+    <ul class="box">
+        <li class="b1"><a href="#">빨</a></li>
+        <li class="b2"><a href="#">주</a></li>
+        <li class="b3"><a href="#">노</a></li>
+        <li class="b4"><a href="#">초</a></li>
+        <li class="b5"><a href="#">파</a></li>
+        <li class="b6"><a href="#">남</a></li>
+        <li class="b7"><a href="#">보</a></li>
+    </ul>
+    
+</body>
+</html>

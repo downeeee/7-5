@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        html, body{height: 100%;}
+        *{margin: 0; padding: 0;}
+        a{text-decoration: none; color: inherit;}
+
+        body{background-color: black;}
+
+        nav{position:absolute;
+            top: 50%; left: 50%; transform: translate(-50% , -50%); }
+        nav a{color: #949494; font-weight: bold; padding: 10px 20px;display: inline-block; position: relative;}
+        nav a::before , nav a::after{content: ''; position: absolute;border-radius:50% ; transform: scale(0); transition: all 0.5s;}
+
+        nav a::before{width: 6px; height: 6px; /* background-color: white; */ top: 0; left: 10px;}
+        nav a::after{width: 4px; height: 4px;/*  background-color: aqua; */top: 5px; left: 18px;}
+
+        nav a:nth-child(1)::before{background-color: rgb(86, 111, 255);}
+        nav a:nth-child(1)::after{background-color: rgb(203, 126, 255);}
+
+        nav a:nth-child(2)::before{background-color: rgb(255, 127, 249);}
+        nav a:nth-child(2)::after{background-color: rgb(255, 129, 150);}
+
+        nav a:nth-child(3)::before{background-color: rgb(255, 230, 0);}
+        nav a:nth-child(3)::after{background-color: darkorange;}
+
+        #bar{position: absolute; left: 5px; bottom: 0; width: 40px; height: 3px; background-color: whitesmoke; border-radius: 5px; transition: all 0.2s ease;}
+
+        nav a:nth-child(1):hover ~ #bar{ background: linear-gradient(to right,rgb(86, 111, 255),rgb(203, 126, 255) );}
+        nav a:nth-child(2):hover ~ #bar{background: linear-gradient(to right, rgb(255, 127, 249), rgb(255, 129, 150));
+                                        left: 35%;}
+        nav a:nth-child(3):hover ~ #bar{background: linear-gradient(to right, rgb(255, 230, 0),darkorange ); left: 70%;}
+
+        nav a:hover::before, nav a:hover::after{transform: scale(1);}
+    </style>
+</head>
+<body>
+<nav>
+    <a href="#">home</a>
+    <a href="#">coding</a>
+    <a href="#">guitar</a>
+    <span id='bar'></span>
+</nav>
+</body>
+</html>
